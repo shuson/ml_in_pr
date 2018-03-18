@@ -27,7 +27,7 @@ for tr in trs[1:]:
     con = tds[5].text.strip().replace('\n', ' ').replace('\r', '')
     result = tds[6].text.strip().replace('\n', ' ').replace('\r', '')
     if len(con) < 4: continue
-    if len(result) < 1: continue
+    if len(result) < 1 or result not in ['通过', '失败']: continue
     
     writer.writerow([con, result])
 
